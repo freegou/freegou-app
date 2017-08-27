@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>我的订单</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div padding>
+    <ion-segment [(ngModel)]="orders">
+      <ion-segment-button value="ing">
+        未完成订单
+      </ion-segment-button>
+      <ion-segment-button value="ed">
+        已完成订单
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="orders">
+    <ion-list *ngSwitchCase="'ing'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503772505918&di=7cfc5b6b44362c84300b2c7840dcdbf1&imgtype=0&src=http%3A%2F%2Fimgqn.koudaitong.com%2Fupload_files%2F2015%2F07%2F02%2FFgY_UOuoiFb0jEtyLiEJDC2AUXA-.jpg%2521730x0.jpg">
+        </ion-thumbnail>
+        <h2>可口可乐 <span class="price">¥3.00</span></h2>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'ed'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503772563237&di=435f95ec0d57a901633f065342c42d93&imgtype=0&src=http%3A%2F%2Fimgqn.koudaitong.com%2Fupload_files%2F2015%2F05%2F23%2FFolbHZUGFIovY6r1IOw86p8ecoSH.jpg%2521280x280.jpg">
+        </ion-thumbnail>
+        <h2>雪碧 <span class="price">¥3.00</span></h2>
+      </ion-item>
+
+    </ion-list>
+  </div>
+</ion-content>
+
